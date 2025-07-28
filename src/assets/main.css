@@ -1,0 +1,92 @@
+/* src/assets/styles/main.css */
+
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base Body Styles */
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  background-color: #1a1a1a; /* Dark background */
+  color: #f0f0f0; /* Light text color */
+  line-height: 1.6;
+}
+
+a {
+  color: inherit; /* Inherit text color for links */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Container for page content */
+.container {
+  max-width: 1280px; /* Equivalent to max-w-6xl */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem; /* px-4 */
+  padding-right: 1rem; /* px-4 */
+}
+
+/* Utility Classes (if you don't use a full framework) */
+.flex {
+  display: flex;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.items-center {
+  align-items: center;
+}
+.flex-col {
+  flex-direction: column;
+}
+.flex-grow {
+  flex-grow: 1;
+}
+.mb-4 {
+  margin-bottom: 1rem;
+}
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.mt-8 {
+  margin-top: 2rem;
+}
+.space-x-4 > *:not(:first-child) {
+  margin-left: 1rem;
+}
+.space-y-4 > *:not(:first-child) {
+  margin-top: 1rem;
+}
+
+/* Colors - Define as variables for consistency */
+:root {
+  --primary-red: #ef4444; /* red-500 */
+  --dark-bg: #1a1a1a; /* gray-900 */
+  --header-footer-bg: #262626; /* gray-800 */
+  --card-bg: #262626; /* gray-800 */
+  --input-bg: #3f3f46; /* gray-700 */
+  --text-light: #f0f0f0; /* gray-100 */
+  --text-medium: #a3a3a3; /* gray-400 */
+  --text-dark: #737373; /* gray-600 */
+}
+
+/* Utility for hidden elements */
+.hidden {
+  display: none;
+}
+.md-block {
+  /* For medium screens and up */
+}
+.md-flex {
+  /* For medium screens and up */
+}
