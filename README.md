@@ -174,19 +174,19 @@ This project follows a modular frontend architecture using Vue 3 and Vite:
 
 ```
 src/
-  main/
-    java/
-      xyz/necmettincimen/marvel/marvel/
-        domain/         # Domain models and ports
-        adapter/
-          in/web/       # REST controllers (inbound adapters)
-          out/persistence/ # Database adapters (outbound)
-        application/service/ # Service layer
-    resources/
-      db/migration/     # Migration scripts
-      application.properties
-  test/
-    java/...
+  assets/           # Static assets and styles
+  components/       # Reusable UI components
+    base/           # Base UI elements (e.g., Pagination)
+    cards/          # Card components (e.g., CharacterCard, ComicCard)
+    icons/          # Icon components
+    layout/         # Layout components (Header, Footer, etc.)
+  router/           # Vue Router configuration
+  stores/           # Pinia stores (state management)
+  types/            # TypeScript interfaces and types
+  views/            # Page-level components (e.g., CharactersPage, ComicsPage)
+  main.ts           # App entry point
+  App.vue           # Root Vue component
+public/             # Static public files (favicon, etc.)
 ```
 
 ## Contributing
@@ -217,10 +217,15 @@ Project Link: [https://github.com/necmettincimen/marvel-vuejs](https://github.co
 
 ## Acknowledgements
 
-- [Spring Boot Documentation](https://docs.spring.io/spring-boot/docs/current/reference/html/)
+- [Vue.js Documentation](https://vuejs.org/)
+- [Vite Documentation](https://vitejs.dev/guide/)
 - [Marvel Developer Portal](https://developer.marvel.com/)
-- [Lombok](https://projectlombok.org/)
-- [H2 Database](https://www.h2database.com/)
+- [Pinia Documentation](https://pinia.vuejs.org/)
+- [Vue Router Documentation](https://router.vuejs.org/)
+- [Axios Documentation](https://axios-http.com/)
+- [Vitest Documentation](https://vitest.dev/)
+- [Playwright Documentation](https://playwright.dev/)
+- [ESLint Documentation](https://eslint.org/)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 
