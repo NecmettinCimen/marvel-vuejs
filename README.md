@@ -1,6 +1,66 @@
-# marvel-vuejs
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
-This template should help get you started developing with Vue 3 in Vite.
+<!-- PROJECT LOGO -->
+<br />
+
+<h3 align="center">Marvel VueJS</h3>
+
+<p align="center">
+  Java VueJS for Marvel universe data.
+  <br />
+  <a href="https://github.com/necmettincimen/marvel-vuejs"><strong>Explore the docs »</strong></a>
+  <br />
+  <br />
+  <a href="https://github.com/necmettincimen/marvel-vuejs/issues">Report Bug</a>
+  ·
+  <a href="https://github.com/necmettincimen/marvel-vuejs/issues">Request Feature</a>
+</p>
+
+---
+
+## Table of Contents
+
+- [About The Project](#about-the-project)
+  - [Built With](#built-with)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Usage](#usage)
+- [Roadmap](#roadmap)
+- [Architecture](#architecture)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+- [Acknowledgements](#acknowledgements)
+
+---
+
+## About The Project
+
+This project is a Vue.js frontend application that allows users to explore Marvel universe data such as characters, comics, and stories. It provides a modern, interactive user interface to browse, search, and view details about Marvel content. The app is designed for learning, demo, and integration with Marvel APIs.
+
+### Built With
+
+- [Vue 3](https://vuejs.org/)
+- [Vite](https://vitejs.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Pinia](https://pinia.vuejs.org/) (state management)
+- [Vue Router](https://router.vuejs.org/)
+- [Axios](https://axios-http.com/)
+- [Vitest](https://vitest.dev/) (unit testing)
+- [Playwright](https://playwright.dev/) (e2e testing)
+- [ESLint](https://eslint.org/) (linting)
+
+---
+
+## Getting Started
+
+To get a local copy up and running follow these simple steps.
 
 ## Recommended IDE Setup
 
@@ -14,7 +74,7 @@ TypeScript cannot handle type information for `.vue` imports by default, so we r
 
 See [Vite Configuration Reference](https://vite.dev/config/).
 
-## Project Setup
+### Project Setup
 
 ```sh
 npm install
@@ -62,3 +122,119 @@ npm run test:e2e -- --debug
 ```sh
 npm run lint
 ```
+
+---
+
+## Usage
+
+Once the application is running, open your browser and go to `http://localhost:5173` (or the port shown in your terminal) to use the Marvel VueJS app.
+
+You can browse, search, and view details about Marvel characters, comics, and your reading list. Authentication features, profile management, and reading list management are available after logging in.
+
+---
+
+## Roadmap
+
+- [x] Add authentication and authorization
+- [x] Add Docker support
+- [ ] Improve test coverage
+
+See the [open issues](https://github.com/necmettincimen/marvel-vuejs/issues) for more.
+
+---
+
+---
+
+## Architecture
+
+This project follows a modular frontend architecture using Vue 3 and Vite:
+
+- **Components:** Reusable UI elements (e.g., cards, icons, pagination) in `src/components/`.
+- **Views:** Page-level components for routing (e.g., CharactersPage, ComicsPage) in `src/views/`.
+- **Router:** Handles navigation and routes in `src/router/`.
+- **Stores:** State management using Pinia in `src/stores/` (e.g., authentication, characters, comics).
+- **Assets:** Static files and styles in `src/assets/`.
+- **Types:** TypeScript interfaces for data models in `src/types/`.
+
+**Key Technologies:**
+
+- **Vue 3:** UI framework
+- **Vite:** Build tool
+- **TypeScript:** Type safety
+- **Pinia:** State management
+- **Vue Router:** Routing
+- **Axios:** HTTP requests
+- **Vitest:** Unit testing
+- **Playwright:** E2E testing
+- **ESLint:** Linting
+
+---
+
+## Example Folder Structure
+
+```
+src/
+  main/
+    java/
+      xyz/necmettincimen/marvel/marvel/
+        domain/         # Domain models and ports
+        adapter/
+          in/web/       # REST controllers (inbound adapters)
+          out/persistence/ # Database adapters (outbound)
+        application/service/ # Service layer
+    resources/
+      db/migration/     # Migration scripts
+      application.properties
+  test/
+    java/...
+```
+
+## Contributing
+
+Contributions are welcome! Please fork the repo and submit a pull request.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+---
+
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+---
+
+## Contact
+
+Necmettin Çimen - [@Necmettin Cimen](https://necmettincimen.github.io) - [necmettin.dev@gmail.com](mailto:necmettin.dev@gmail.com)
+
+Project Link: [https://github.com/necmettincimen/marvel-vuejs](https://github.com/necmettincimen/marvel-vuejs)
+
+---
+
+## Acknowledgements
+
+- [Spring Boot Documentation](https://docs.spring.io/spring-boot/docs/current/reference/html/)
+- [Marvel Developer Portal](https://developer.marvel.com/)
+- [Lombok](https://projectlombok.org/)
+- [H2 Database](https://www.h2database.com/)
+
+<!-- MARKDOWN LINKS & IMAGES -->
+
+[contributors-shield]: https://img.shields.io/github/contributors/necmettincimen/marvel-vuejs.svg?style=for-the-badge
+[contributors-url]: https://github.com/necmettincimen/marvel-vuejs/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/necmettincimen/marvel-vuejs.svg?style=for-the-badge
+[forks-url]: https://github.com/necmettincimen/marvel-vuejs/network/members
+[stars-shield]: https://img.shields.io/github/stars/necmettincimen/marvel-vuejs.svg?style=for-the-badge
+[stars-url]: https://github.com/necmettincimen/marvel-vuejs/stargazers
+[issues-shield]: https://img.shields.io/github/issues/necmettincimen/marvel-vuejs.svg?style=for-the-badge
+[issues-url]: https://github.com/necmettincimen/marvel-vuejs/issues
+[license-shield]: https://img.shields.io/github/license/necmettincimen/marvel-vuejs.svg?style=for-the-badge
+[license-url]: https://github.com/necmettincimen/marvel-vuejs/blob/master/LICENSE.txt
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/necmettincimen
+
+---
