@@ -17,3 +17,24 @@ export interface User {
   email: string
   profilePhoto: string
 }
+
+export interface RegisterRequest {
+  username: string
+  password: string
+  email: string
+  profilePhoto: string
+}
+
+export interface RegisterResponse {
+  success: boolean
+  message: string
+  result: Register
+}
+
+export interface Register {
+  id: number
+  username: string
+  password: string
+  email: string
+  profilePhoto: string
+}

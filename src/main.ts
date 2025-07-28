@@ -5,8 +5,10 @@ import { createPinia } from 'pinia'
 
 import App from './App.vue'
 import router from './router'
+import { VueReCaptcha } from 'vue-recaptcha-v3'
 
 const app = createApp(App)
+app.use(VueReCaptcha, { siteKey: '6LcthpErAAAAAMC7V3Dn9hJsfZTlRRxpTmSTlvEq' })
 
 app.use(createPinia())
 app.use(router)

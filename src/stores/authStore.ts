@@ -1,4 +1,9 @@
-import { type UserLoginResponse, type Result } from '@/types/User'
+import {
+  type UserLoginResponse,
+  type Result,
+  type RegisterRequest,
+  type RegisterResponse,
+} from '@/types/User'
 import axios from './axiosInstance'
 import { defineStore } from 'pinia'
 
@@ -28,6 +33,21 @@ export const useAuthStore = defineStore('auth', {
         if (!response.data.success) return false
 
         this.setToken(response.data.result)
+
+        return true
+      } catch {
+        return false
+      }
+    },
+    async register(body: RegisterRequest) {
+      try {
+        const response = await axios.post<RegisterResponse>(
+          '/marvel-java-app/api/users/public/register',
+          body,
+        )
+        if (!response.data.success) return false
+
+        // this.setToken(response.data.result)
 
         return true
       } catch {

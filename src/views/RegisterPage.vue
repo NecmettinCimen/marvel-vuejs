@@ -1,9 +1,12 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+import { useReCaptcha } from 'vue-recaptcha-v3'
+
 import BaseLayout from '@/components/layout/BaseLayout.vue' // Layout'u kullanmak için
 
 const router = useRouter()
+const { executeRecaptcha } = useReCaptcha()
 
 const username = ref('')
 const email = ref('')
@@ -13,10 +16,15 @@ const errorMessage = ref<string | null>(null)
 const successMessage = ref<string | null>(null)
 const isLoading = ref(false)
 
+const onCaptchaVerified = (token: string) => {
+  // token'ı backend'e gönderin veya doğrulama için saklayın
+}
+
 const handleRegister = async () => {
   errorMessage.value = null
   successMessage.value = null
   isLoading.value = true
+  const token = await executeRecaptcha('register')
 
   // Basic client-side validation
   if (password.value !== confirmPassword.value) {
@@ -113,6 +121,7 @@ const handleRegister = async () => {
               required
             />
           </div>
+          <vue-recaptcha @verify="onCaptchaVerified" />
 
           <p v-if="errorMessage" class="error-message">{{ errorMessage }}</p>
           <p v-if="successMessage" class="success-message">{{ successMessage }}</p>
