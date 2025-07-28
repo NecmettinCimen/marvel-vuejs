@@ -6,7 +6,7 @@ import { useReCaptcha } from 'vue-recaptcha-v3'
 import BaseLayout from '@/components/layout/BaseLayout.vue' // Layout'u kullanmak için
 
 const router = useRouter()
-const { executeRecaptcha } = useReCaptcha()
+const recaptcha = useReCaptcha()
 
 const username = ref('')
 const email = ref('')
@@ -16,7 +16,7 @@ const errorMessage = ref<string | null>(null)
 const successMessage = ref<string | null>(null)
 const isLoading = ref(false)
 
-const onCaptchaVerified = (token: string) => {
+const onCaptchaVerified = () => {
   // token'ı backend'e gönderin veya doğrulama için saklayın
 }
 
@@ -24,9 +24,16 @@ const handleRegister = async () => {
   errorMessage.value = null
   successMessage.value = null
   isLoading.value = true
-  const token = await executeRecaptcha('register')
+  let token: string | null = null
+  if (recaptcha && recaptcha.executeRecaptcha) {
+    token = await recaptcha.executeRecaptcha('register')
+  }
+  if (!token) {
+    errorMessage.value = 'Captcha verification failed.'
+    isLoading.value = false
+    return
+  }
 
-  // Basic client-side validation
   if (password.value !== confirmPassword.value) {
     errorMessage.value = 'Passwords do not match.'
     isLoading.value = false
@@ -57,8 +64,8 @@ const handleRegister = async () => {
     } else {
       errorMessage.value = 'Please fill in all required fields.'
     }
-  } catch (error: any) {
-    errorMessage.value = error.message || 'An unexpected error occurred during registration.'
+  } catch (error: unknown) {
+    errorMessage.value = 'An unexpected error occurred during registration.'
     console.error('Registration error:', error)
   } finally {
     isLoading.value = false
